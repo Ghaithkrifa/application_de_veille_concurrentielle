@@ -1,0 +1,105 @@
+.user-container {
+  height: 100%;
+  
+  background-color: #f2f4f8;
+}
+
+mat-drawer {
+  width: 240px;
+  overflow: hidden;
+  /* padding: 24px; */
+  border: none;
+}
+
+mat-drawer img {
+  position: absolute;
+  height: 180px;;
+  left: 24px;
+  top: 14px;
+}
+.btn-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+}
+button {
+  width: 100%;
+}
+.btn-navigation {
+  margin-top: 221px;
+}
+.btn-navigation button:hover {
+  margin-top: -2px;
+  top: 76px;
+  width: 300px;
+  height: 71px;
+  background: #f2f4f8;
+  border: none;
+  padding: 5px;
+}
+.btn-navigation button {
+  margin-top: -2px;
+  top: 76px;
+  width: 235px;
+  height: 71px;
+  background: #ffffff;
+  border: none;
+  padding: 5px;
+  border-top-style: 5px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #20a5cb;
+  border-bottom: 1px rgb(216, 216, 216) solid;
+  z-index: 1;
+}
+.btn{
+  color: #f2f4f8;
+}
+.ghaith button {
+  width: 40%;
+}
+.ghaith {
+  width: 30%;
+  display: flex;
+  display: inline-block;
+  position: relative;
+  flex-direction: column;
+  margin-left: 40px;
+  background-color: white;
+  height: 110px;
+}
+.header ngx-avatar {
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.btnnavigate {
+  font-weight: bold;
+  color: #196d85;
+  letter-spacing: 1px;
+  font-size: large;
+}
+.donne{
+  padding: 10px;
+}
+.tex{
+  font-weight: bolder;
+  transform: translateY(10px);
+  font-size: large;
+  color: #f2f4f8;
+  letter-spacing: 1.5px;
+}

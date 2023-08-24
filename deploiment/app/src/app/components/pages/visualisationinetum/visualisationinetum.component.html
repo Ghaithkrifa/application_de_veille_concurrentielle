@@ -1,0 +1,177 @@
+<h1 class="GeneralData">Données générales :</h1>
+<div class="card">
+    <div class="container">
+
+<div *ngFor="let concurent of apiCompititors">
+
+    <div *ngIf="concurent.competitor =='inetum'">
+        <table>
+            <tr>
+                <th>date de fondation</th>
+                <th>Secteur</th>
+                <th>Siege social</th>
+                <th>Specialisations</th>
+                <th>Site web</th>
+
+            </tr>
+            <tr>
+                <td>{{concurent.foundingDate}}</td>
+                <td>{{concurent.Sector}}</td>
+                <td>{{concurent.HeadOffice}}</td>
+                <td>{{concurent.Specializations}}</td>
+                <td> {{concurent.link_Site_web}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</div>
+</div>
+<h1 class="GeneralData">Statistiques générales :</h1>
+<div class="card1"><div class="container1">
+<div class="sm"><img class="statgen" src="assets/linkedin.png" alt="bg"><p class="smpL">Linkedin</p></div>
+<div class="grid_container">
+    <div class="barchart">
+
+        <canvas id="employee_chart"></canvas>
+    </div>
+    <div class="barchart">
+
+        <canvas id="abonnee_chart"></canvas>
+    </div>
+</div></div>
+</div>
+<div class="card"><div class="container">
+<div class="ytb">
+<div class="sm"><img class="statgenYT" src="assets/youtube.png" alt="bg"><p class="smp">Youtube</p></div>
+<div class="grid_container2">
+    
+    <div class="barchart2">
+        <canvas id="videochart"></canvas>
+    </div>
+    <div class="barchart2">
+        <canvas id="subscribechart"></canvas>
+    </div>
+</div>
+</div>
+</div></div>
+<h1 class="GeneralData">Statistiques taux d'engagement :</h1>
+<div class="card2"><div class="container2">
+<div class="cr">
+<mat-grid-list cols="2" rowHeight="2:1">
+    <div class="logos">
+    <mat-grid-tile>
+        <img class="logoY" (click)="toogletag1()" src="assets/youtube.png" alt="bg">
+        <h2>Youtube</h2>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img class="logo" (click)="toogletag()" src="assets/linkedin.png" alt="bg">
+        <h2>Linkedin</h2>
+    </mat-grid-tile></div>
+</mat-grid-list>
+<div class="filtr">
+    <div *ngIf="showMe=='linkedin'">
+        <form [formGroup]="searchForm" class="fourma" (submit)="searchPosts()">
+            <div class="dashb">
+                <div class="form-group">
+                    <mat-label class="datatype">type de données</mat-label>
+                    <mat-select class="form-control" formControlName="type" matNativeControl required>
+                        <mat-option value="Image">Image</mat-option>
+                        <mat-option value="Video">Video</mat-option>
+                        <mat-option value="Article">Article</mat-option>
+                    </mat-select>
+                </div>
+
+                <div class="form-group">
+                    <mat-label class="datatype" >Période de temps</mat-label>
+                    <mat-select class="form-control" formControlName="periode" matNativeControl required>
+                        <mat-option value="trimestre"> Ce trimestre</mat-option>
+                        <mat-option value="semestre"> Ce semestre</mat-option>
+                        <mat-option value="ans">ans</mat-option>
+                        <mat-option value="mois"> Ce mois-ci</mat-option>
+                        <mat-option value="semaine"> Cette semaine</mat-option>
+
+                    </mat-select>
+                </div>
+                <div class="form-group">
+                    <mat-label>taux d'engagement</mat-label>
+                    <mat-select class="form-control" formControlName="engagementRate" matNativeControl required>
+                        <mat-option value="shares">Nombre de partage</mat-option>
+                        <mat-option value="likes">Nombre de jaime</mat-option>
+                        <mat-option value="comments">Nombre de commentaire</mat-option>
+                    </mat-select>
+                </div>
+                <div class="btn-search">
+                    <button class="buttonConsulter" mat-raised-button color="primary" [disabled]="!searchForm.valid">
+                        <mat-icon>search</mat-icon>
+                        Consulter
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+    <div *ngIf="showMe=='youtube'">
+        <form [formGroup]="searchForm1" (submit)="searchyoutube()">
+            <div class="dashb">
+                <div class="form-group">
+                    <label>taux d'engagement</label>
+                    <mat-select class="form-control" formControlName="engagementRate1" matNativeControl require>
+                        <mat-option value="viewCount">Nombre de vue</mat-option>
+                        <mat-option value="likeCount">Nombre de jaime</mat-option>
+                    </mat-select>
+                </div>
+                <div class="form-group">
+                    <label>Période de temps</label>
+                    <mat-select class="form-control" formControlName="periode1" matNativeControl required>
+                        <mat-option value="trimestre"> Ce trimestre</mat-option>
+                        <mat-option value="semestre"> Ce semestre</mat-option>
+                        <mat-option value="ans">ans</mat-option>
+                        <mat-option value="mois"> Ce mois-ci</mat-option>
+                        <mat-option value="semaine"> Cette semaine</mat-option>
+
+                    </mat-select>
+                </div>
+               
+                <div class="btn-search">
+                    <button class="buttonConsulter" mat-raised-button color="primary" [disabled]="!searchForm1.valid" >
+                        <mat-icon>search</mat-icon>
+                        Consulter
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="linechart">
+    <canvas id="ratechart"></canvas>
+</div>
+</div>
+</div></div>
+<h1 class="GeneralData">Autre statistiques : </h1>
+<div class="card3"><div class="container3">
+<div class="grid_container1">
+    <div class="pychart">
+        <canvas id="piechart"></canvas>
+    </div>
+    <div class="pychart">
+        <canvas id="piechart1"></canvas>
+    </div>
+    <div class="pychart">
+        <canvas id="piechart2"></canvas>
+    </div>
+</div>
+</div></div>
+<h1 class="GeneralData">Analyse sentimentale : </h1>
+<div class="card3"><div class="container3">
+<div class="grid_container1">
+    <div class="pichart">
+        <canvas id="sentimentchart" height="20" width="20"></canvas>
+    </div>
+    <div class="pichart" style="transform: translate(40%, 0px);" >
+        <canvas id="sentimentchart1" height="20" width="20"></canvas>
+    </div></div>
+</div></div>
+<p></p>

@@ -1,0 +1,22 @@
+.posts-container {
+    width:  746px;
+    margin-top: 50px;
+    margin-left: 25%;
+  }
+.tex{
+  font-weight: bolder;
+  font-size: xx-large;
+  letter-spacing: 2px;
+  color: #196d85;
+  margin-left: 2%;
+  margin-top: 2%
+}
+.bouton{
+  background-color: #20a5cb;
+  color: #fafafa;
+  padding: 8px 25px;
+  transform: translateX(430%);
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 1px;
+}

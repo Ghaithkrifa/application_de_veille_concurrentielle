@@ -1,0 +1,94 @@
+<p class="tex">Liste des concurrents :</p>
+<div class="listC">
+    <div class="container" *ngFor="let book of apiCompititors">
+        <div class="card" *ngIf="book.competitor =='gather'">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img classe="image" src="{{book.link_logo}}"  alt="gathertown" style="  width: 100% ; transform: translateY(-20%);" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h3>{{book.competitor}}</h3>
+                    <a routerLink="/dashboard/visualisationagather">
+                        <button mat-raised-button class="btnV">
+                            <mat-icon class="iconV">dashboard</mat-icon><span class="textV">
+                                Visualiser dashboard</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngFor="let book of apiCompititors">
+        <div class="card" *ngIf="book.competitor =='accenture'">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img classe="image"  src="{{book.link_logo}}" alt="accenture" style="  width: 100% ; transform: translateY(-20%);" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h3>{{book.competitor}}</h3>
+
+                    <a routerLink="/dashboard/visualisationaccenture">
+                        <button mat-raised-button class="btnV">
+                            <mat-icon class="iconV">dashboard</mat-icon><span class="textV">
+                                Visualiser dashboard</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngFor="let book of apiCompititors">
+        <div class="card" *ngIf="book.competitor =='niantic'">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img classe="image" src="{{book.link_logo}}" style="  width: 100% ; transform: translateY(-20%);" alt="niantic" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h3>{{book.competitor}}</h3>
+
+                    <a routerLink="/dashboard/visualisationniantic">
+                        <button mat-raised-button class="btnV">
+                            <mat-icon class="iconV">dashboard</mat-icon><span class="textV">
+                                Visualiser dashboard</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngFor="let book of apiCompititors">
+        <div class="card" *ngIf="book.competitor =='inetum'">
+            <div class="slide slide1">
+                <div class="content">
+                    <div class="icon">
+                        <img classe="logo" src="{{book.link_logo}}" alt="inetum" style="  width: 100% ; transform: translateY(-20%);" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="content">
+                    <h3>{{book.competitor}}</h3>
+
+                    <a routerLink="/dashboard/visualisationainitum">
+                        <button mat-raised-button class="btnV">
+                            <mat-icon class="iconV">dashboard</mat-icon><span class="textV">
+                                Visualiser dashboard</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

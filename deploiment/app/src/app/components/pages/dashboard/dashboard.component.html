@@ -1,0 +1,58 @@
+<mat-drawer-container class="user-container">
+    <mat-drawer mode="side" opened>
+        <img src="assets/logo.png" />
+        <!-- <app-user-card></app-user-card> -->
+        <div class="btn-navigation">
+            <a routerLink="/dashboard">
+                <button class="btnnavigate"> Listes Concurrents</button>
+            </a>
+            <a routerLink="/dashboard/activite">
+                <button class="btnnavigate"> Activités recentes</button>
+            </a>
+            <a routerLink="/dashboard/aregarder">
+                <button class="btnnavigate"> A regarder plus tard</button>
+            </a>
+        </div>
+
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+
+        <div class="header">
+            <p class="tex">Talan Competitives</p>
+
+            <div FxLayout="row" fxLayoutAlign="end center">
+                <button class="btn" mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+
+
+                <mat-menu #menu="matMenu">
+
+                    <div *ngIf="user">
+                        <p class="donne">{{user.fullName}}</p>
+                        <p class="donne">{{user.email}} </p>
+                    </div>
+                    <button mat-menu-item (click)="logout()">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
+                    </button>
+
+
+                </mat-menu>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
